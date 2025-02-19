@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
+import openrouteservice
 
 app = Flask(__name__)
 app.secret_key = 'HOMO_exe'  # Thay đổi 'your_secret_key_here' thành một chuỗi ngẫu nhiên và bí mật
@@ -121,5 +122,19 @@ def logout():
     session.pop('username', None)  # Xóa thông tin tên người dùng khỏi phiên
     return redirect(url_for('index'))  # Chuyển hướng về trang chính
 
+@app.route('/address_calculator')
+def address_calculator():
+    coords = (
+        (105.8342, 21.0278), # Hà Nội
+        (106.6602, 10.7626) # TP. Hồ Chí Minh
+    )
+
+    client = openrouteservice.Client(key='5b3ce3597851110001cf6248aff4267605074765b7cdcaa38892b800') # Specify your personal API key
+    routes = client.directions(coords)
+
+    distance_meters = routes["routes"][0]["summary"]["distance"]
+    distance_kilometers = distance_meters / 1000
+    return str(distance_kilometers)
+
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
