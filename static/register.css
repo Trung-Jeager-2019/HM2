@@ -1,0 +1,98 @@
+/* reset.css - Tạo một số kiểu cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+.container h2{
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    color: #a60102;
+
+}
+
+.logo {
+    text-align: center; /* Căn giữa logo */
+    margin-bottom: 30px; /* Khoảng cách dưới logo */
+}
+
+.logo img {
+    width: 300px; /* Chiều rộng của logo */
+    margin: 0; /* Bỏ margin */
+}
+
+.register-form h2 {
+    margin-bottom: 15px; /* Khoảng cách dưới tiêu đề đăng ký */
+}
+
+.input-group {
+    margin-bottom: 15px; /* Khoảng cách dưới mỗi input */
+}
+
+
+label {
+    display: block; /* Làm label chiếm toàn bộ chiều rộng */
+    margin-bottom: 5px; /* Khoảng cách dưới label */
+    font-weight: bold; /* Đậm chữ */
+}
+.register-form h2{
+    color: #a60102;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    padding: 10px; /* Padding cho input */
+    border: 1px solid #ccc; /* Đường viền cho input */
+    border-radius: 5px; /* Bo góc */
+}
+
+.btn {
+    background-color: #a60102;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1em;
+    margin-top: 15px;   
+}
+
+.btn:hover {
+    background-color: darkred;
+}
+
+.signup-link {
+    text-align: center; /* Canh giữa liên kết đăng nhập */
+    margin-top: 15px; /* Khoảng cách trên */
+}
+
+.signup-link a {
+    color: #007bff; /* Màu chữ liên kết */
+    text-decoration: none; /* Bỏ gạch chân */
+}
+
+.signup-link a:hover {
+    text-decoration: underline; /* Gạch chân khi hover */
+}

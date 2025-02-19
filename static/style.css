@@ -1,0 +1,455 @@
+/* Reset cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Cài đặt font và màu sắc chung */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+header img{
+    width: 200px;
+    height:auto;
+
+}
+/* Phần header */
+header {
+    background-color: white;
+    padding: 10px; /* Giảm padding cho header */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Đảm bảo chiều rộng 100% */
+}
+
+/* Button nhóm trong header - Căn phải */
+.btn-group {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px; /* Giảm khoảng cách giữa các nút */
+}
+
+.btn-group button {
+    width: 120px; /* Hoặc kích thước mà bạn muốn */
+    padding: 10px 0; /* Padding dọc cho nút */
+    background-color: #a60102
+    ;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center; /* Căn giữa nội dung trong nút */
+}
+
+.btn-group button:hover {
+    background-color: darkred;
+}
+.greeting {
+    display: block; /* Để biến dòng thành một khối, giúp nó xuống dòng */
+    margin: 10px 10px 0 0; /* Thay đổi giá trị này để điều chỉnh khoảng cách */
+    font-size: 20px;
+}
+
+strong {
+    font-weight: bold; /* In đậm chữ username */
+}
+
+
+
+/* Phần giữa với flexbox */
+
+.intro-wrapper {
+    margin: 40px auto;
+    width: 80%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Căn giữa nội dung */
+}
+
+.intro-wrapper h1 {
+    font-size: 40px;
+    color: #a60102;
+    margin-bottom: 10px;
+    font-weight: 1000;
+}
+
+.intro-wrapper p {
+    font-size: 20px;
+    color: #666;
+    margin: 0 0;
+}
+
+.feature-wrapper, .partners-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px auto;
+    width: 80%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature-wrapper .feature, 
+.partners-wrapper .partner-text {
+    flex: 1;
+    padding: 20px;
+}
+
+.feature-wrapper .feature-image, 
+.partners-wrapper .partner-image {
+    flex: 1;
+    padding: 20px;
+}
+
+.feature-wrapper img, 
+.partners-wrapper img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.partner button {
+    background-color: #a60102;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.partner button:hover {
+    background-color: darkred;
+}
+
+h2 {
+    font-size: 28px;
+    color: #a60102;
+    margin-bottom: 10px;
+}
+
+p, ul {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #008100cb;
+}
+
+.pricing {
+    background-color: white;
+    padding: 30px;
+    margin: 40px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Căn chỉnh form bên trái */
+.pricing form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.pricing form h2 {
+    text-align: left; /* Căn trái tiêu đề */
+    color: #a60102;
+    margin-bottom: 20px;
+}
+
+.pricing form label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.pricing form input {
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.pricing form select {
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.pricing form button {
+    padding: 15px 30px;
+    font-size: 16px;
+    background-color: #a60102;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80%;
+}
+
+
+#loading {
+    display: none; /* Ẩn ảnh loading mặc định */
+    width: 50px;  /* Kích thước nhỏ hơn cho ảnh loading */
+    height: auto; /* Kích thước nhỏ hơn cho ảnh loading */
+    margin: 0 20px 20px 0; /* Khoảng cách giữa ảnh loading và giá */
+}
+#price-display {
+    display: none; /* Ẩn giá mặc định */
+    align-items: center; 
+    font-size: 30px; /* Kích thước chữ cho giá */
+    color: #a60102; /* Màu cho số tiền */
+    margin: 0 20px 20px 0; /* Khoảng cách giữa ảnh loading và giá */
+    font-weight: bold;
+}
+
+
+.pricing form button:hover {
+    background-color: darkred;
+}
+
+/* Phần hình ảnh bản đồ bên phải */
+.map-image {
+    flex: 1;
+    text-align: right;
+}
+
+.map-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+.guide {
+    background-color: white;
+    padding: 30px;
+    margin: 40px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.guide-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    flex-wrap: wrap; /* Cho phép các phần tử tự động xuống dòng khi không đủ chỗ */
+    width: 100%; /* Đảm bảo chiều rộng tối đa là 100% của phần tử cha */
+    box-sizing: border-box; /* Đảm bảo padding và border không làm tăng kích thước thực tế */
+}
+
+.guide-title h2 {
+    color: #a60102;
+    text-align: center;
+    font-weight: bold;
+    width: 100%; /* Đảm bảo tiêu đề chiếm 100% chiều rộng, tránh tràn ra ngoài */
+    margin-bottom: 20px;
+}
+
+.guide-steps {
+    flex: 1;
+    margin-left: 20px;
+    box-sizing: border-box; /* Đảm bảo padding không làm vượt kích thước phần tử */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%; /* Chiều rộng cho footer */
+}
+
+.footer-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-left h3 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-left p {
+    margin: 0;
+    color:#fff;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0 0 0;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-right {
+    flex: 1;
+    text-align: right;
+    overflow: hidden; /* Ẩn phần thừa nếu có */
+}
+
+.footer-right img {
+    width: 200px; /* Điều chỉnh kích thước logo */
+    height: auto;
+}
+
+
+
+/* CSS cho nút lăn lên đầu trang */
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    display: none; /* Ẩn nút ban đầu */
+    background-color: #a60102;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3%;
+    font-size: 25px;
+    cursor: pointer;
+    height:auto;
+    width: 50px;
+}
+
+#backToTop:hover {
+    background-color: darkred;
+}
+
+
+/* Media queries cho thiết bị di động */
+@media (max-width: 768px) {
+    .btn-group {
+        flex-direction: column; /* Chuyển các nút từ hàng ngang sang hàng dọc nếu cần */
+        align-items: flex-end; /* Căn phải các nút */
+    }
+
+    .btn-group button {
+        width: 50%; /* Đặt chiều rộng nút bằng 100% */
+        margin-bottom: 5px; /* Thêm khoảng cách giữa các nút */
+        font-size: 60%;
+    }
+    .greeting {
+        flex-direction: column; /* Chuyển các nút từ hàng ngang sang hàng dọc nếu cần */
+        margin: 60%; /* Thay đổi giá trị này để điều chỉnh khoảng cách */
+        font-size: 60%;
+    }
+    
+    .feature-wrapper, .partners-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    section.pricing select {
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+    .guide-wrapper {
+        flex-direction: column; /* Chuyển các phần tử từ hàng ngang sang hàng dọc trên màn hình nhỏ */
+        align-items: center; /* Đảm bảo căn giữa các phần tử */
+        width: 100%; /* Đảm bảo chiều rộng tối đa */
+    }
+
+    .guide-title h2 {
+        text-align: center;
+        width: 100%; /* Đảm bảo tiêu đề luôn chiếm 100% chiều rộng */
+        margin-bottom: 10px;
+    }
+
+    .guide-steps {
+        margin-left: 0;
+        text-align: center; /* Căn giữa nội dung văn bản của hướng dẫn */
+        width: 100%; /* Đảm bảo các bước hướng dẫn chiếm 100% chiều rộng trên màn hình nhỏ */
+    }
+    .footer-container {
+        flex-direction: column; /* Chuyển các phần tử từ hàng ngang sang hàng dọc */
+        align-items: center; /* Căn giữa các phần tử */
+        width: 100%; /* Đảm bảo chiều rộng tối đa */
+    }
+
+    .footer-left, .footer-right {
+        text-align: center; /* Căn giữa nội dung */
+        margin: 10px 0; /* Thêm khoảng cách giữa các phần tử */
+    }
+
+    .footer-right img {
+        max-width: 100%; /* Đảm bảo logo không vượt quá chiều rộng phần tử chứa */
+        height: auto; /* Giữ tỷ lệ chiều cao */
+    }
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMOMOVING</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="static/image_logo.png" alt="HOMOMOVING Logo">
+        </div>
+        <div class="btn-group">
+            {% if session.username %}
+            <div>
+                <span class="greeting">Xin chào, <strong>{{ session.username }}</strong>!</span>
+            </div>
+                            <button onclick="window.location.href='logout'">Đăng Xuất</button>
+            {% else %}
+                <button onclick="window.location.href='login'">Đăng Nhập</button>
+                <button onclick="window.location.href='register'">Đăng Ký</button>
+            {% endif %}
+        </div>
+    </header>
+    
+
+    <!-- Thêm phần mới cho hai dòng chữ -->
+    <div class="intro-wrapper">
+        <h1>HOMO - WE MOVE IT ALL</h1>
+        <p>Mang đến giải pháp hoàn hảo cho mọi nhu cầu giao hàng của bạn nhờ công nghệ đột phá</p>
+        <p>Tất cả trong một ứng dụng duy nhất</p>
+    </div>
+    
+
+    <!-- Phần giữa - Luôn đồng hành và Đối tác đồng hành -->
+    <section class="features">
+        <div class="feature-wrapper">
+            <div class="feature">
+                <h2>Luôn đồng hành cùng bạn khi bạn cần</h2>
+                <p>Chúng tôi mang đến cho khách hàng những trải nghiệm hài lòng nhất về thời gian, chi phí và sự an tâm trên mỗi chuyến hàng.</p>
+                
+            </div>
+            <div class="feature-image">
+                <img src="static/1.png" alt="Feature Image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần đối tác -->
+    <section class="partners">
+        <div class="partners-wrapper">
+            <div class="partner-image">
+                <img src="static/2.png" alt="Partner Image">
+            </div>
+            <div class="partner">
+                <h2>Đối tác đồng hành cùng HOMO</h2>
+                <ul>
+                    <li>Thu nhập hấp dẫn - Nhận tiền ngay sau mỗi cuốc xe</li>
+                    <li>Làm chủ thời gian - Nhận đơn bất cứ lúc nào</li>
+                    <li>Đăng ký dễ dàng - Chúng tôi sẽ liên hệ ngay khi nhận được thông tin đăng ký</li>
+                </ul>
+                <button onclick="window.location.href='driver_register'">Đăng Ký Tài Xế!</button>
+            </div>
+        </div>
+    </section>
+<!-- Phần hiện tại trong index.html -->
+<div class="pricing">
+    <div class="pricing-wrapper">
+        <form action="/booking" method="get"> <!-- Changed to redirect to /booking -->
+            <h2>THAM KHẢO CƯỚC PHÍ</h2>
+            
+            <label for="from">Từ:</label>
+            <input type="text" id="from" name="from" placeholder="Nhập địa chỉ">
+            
+            <label for="to">Đến:</label>
+            <input type="text" id="to" name="to" placeholder="Nhập địa chỉ">
+            
+            <label for="vehicle">Chọn loại xe:</label>
+            <select id="vehicle">
+                <option value="">Chọn loại xe</option>
+                <option value="ba_gac">Ba gác (700kg)</option>
+                <option value="xe_tai_nho">Xe tải nhỏ (1.25 tấn)</option>
+                <option value="xe_tai_trung">Xe tải trung (2.4 tấn)</option>
+            </select>
+            <img id="loading" src="static/loading.webp" alt="Loading..." />
+            
+            <div id="price-display">
+                <span id="price"></span> <!-- Chỉ hiển thị số tiền mà không có chữ "Giá" -->
+            </div>
+
+            <button type="submit">ĐẶT XE NGAY!</button> <!-- Action is now form submission to booking page -->
+        </form>
+        
+        <div class="map-image">
+            <img src="static/map.png" alt="Bản đồ">
+        </div>
+    </div>
+</div>
+
+    
+    <div class="guide">
+        <div class="guide-wrapper">
+            <div class="guide-title">
+                <h2>Hướng dẫn sử dụng dịch vụ giao hàng HOMO</h2>
+            </div>
+            <div class="guide-steps">
+                <p><strong>Bước 1:</strong></p>
+                <p>Chọn "Từ" và nhập địa chỉ của bạn.</p>
+                <p><strong>Bước 2:</strong></p>
+                <p>Chọn "Đến" và nhập địa chỉ nơi bạn muốn chuyển hàng đến.</p>
+                <p><strong>Bước 3:</strong></p>
+                <p>Chọn loại xe vận chuyển mà bạn muốn.</p>
+                <p><strong>Bước 4:</strong></p>
+                <p>Chọn yêu cầu đặc biệt (nếu có).</p>
+                <p><strong>Bước 5:</strong></p>
+                <p>Nhập thông tin người nhận hàng và kiểm tra thông tin thanh toán đơn hàng.</p>
+            </div>
+        </div>
+    </div>
+    <a href="#" id="backToTop" title="Go to top">&#8679;</a>
+    <script src="static/scripts.js"></script>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h3>HOMEMOVING</h3>
+                <p>Tel: 0905921511</p>
+                <p>Email: homoexpress2024@gmail.com</p>
+                <p>Contact us:</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/vuong.trantrung.92/"><img src="static/fb.png" alt="Facebook"></a>
+                    <a href="#"><img src="static/tiktok.png" alt="TikTok"></a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <img src="static/logo.png" alt="HomeMoving Logo">
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

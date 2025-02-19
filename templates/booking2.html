@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" href="static/booking2.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+    <!-- Logo Section (on top) -->
+    <div class="logo">
+        <img src="static/image.png" alt="HomeMoving Logo">
+    </div>
+
+    <div class="container">
+        <div class="form-section">
+            <form action="/booking3" method="get"> <!-- Changed to redirect to /booking -->
+            <h2>Vui lòng nhập lộ trình của bạn</h2>
+                <!-- Địa điểm gửi hàng -->
+                <label for="province">Địa điểm nhận hàng</label>
+                <select id="province" name="province">
+                    <option value="">Tỉnh</option>
+                    <!-- Add options dynamically -->
+                </select>
+
+                <select id="city" name="city">
+                    <option value="">Thành Phố</option>
+                    <!-- Add options dynamically -->
+                </select>
+
+                <input type="text" id="address" name="address" placeholder="Địa chỉ chi tiết">
+
+                <!-- Chi tiết địa điểm -->
+                <label for="location-type">Chi tiết địa điểm</label>
+                <select id="location-type" name="location-type">
+                    <option value="mat_tien">Mặt tiền</option>
+                    <option value="hem_lon">Hẻm > 2.5m</option>
+                    <option value="hem_nho">Hẻm < 2.5m</option>
+                </select>
+
+                <!-- Thông tin người gửi -->
+                <label>Thông tin người gửi:</label>
+                <div class="user-info">
+                    <input type="text" id="name" name="name" placeholder="Tên">
+                    <input type="text" id="phone" name="phone" placeholder="Số điện thoại">
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit">Tiếp tục</button>
+            </form>
+        </div>
+
+        <!-- Map section -->
+        <div class="map-section">
+            <img src="static/map.png" alt="Map">
+        </div>
+    </div>
+</body>
+</html>

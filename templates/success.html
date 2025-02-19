@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc mừng - HoMo</title>
+    <link rel="stylesheet" href="static/success.css">
+    <script>
+        // JavaScript để đếm ngược và chuyển hướng
+        let countdown = 5;
+        function startCountdown() {
+            const countdownElement = document.getElementById("countdown");
+            const interval = setInterval(() => {
+                if (countdown > 1) {
+                    countdown--;
+                    countdownElement.textContent = `Sẽ chuyển hướng về trang chính trong ${countdown}...`;
+                } else {
+                    clearInterval(interval); // Dừng đếm ngược khi kết thúc
+                    window.location.href = "/"; // Chuyển hướng về trang chính sau khi đếm ngược
+                }
+            }, 1000); // Mỗi giây giảm 1
+        }
+        window.onload = startCountdown; // Bắt đầu đếm ngược khi trang tải xong
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Chúc mừng bạn đã trở thành <br> đối tác của HoMo!</h1>
+        <img src="static/image.png" alt="HoMo Logo" class="logo">
+
+        <p id="countdown">Sẽ chuyển hướng về trang chính trong 5...</p> <!-- Vùng chứa đếm ngược -->
+    </div>
+
+</body>
+</html>
