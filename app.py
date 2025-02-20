@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
-import openrouteservice
+from utils.helper import geocode_address, calculate_distance
 
 app = Flask(__name__)
 app.secret_key = 'HOMO_exe'  # Thay đổi 'your_secret_key_here' thành một chuỗi ngẫu nhiên và bí mật
@@ -124,17 +124,20 @@ def logout():
 
 @app.route('/address_calculator')
 def address_calculator():
-    coords = (
-        (105.8342, 21.0278), # Hà Nội
-        (106.6602, 10.7626) # TP. Hồ Chí Minh
-    )
+    address1 = "1029 Trần Hưng Đạo, Đống Đa, Quy Nhơn, Bình Định, Việt Nam"
+    address2 = "669 Trần Hưng Đạo, Lê Hồng Phong, Quy Nhơn, Bình Định, Việt Nam"
+    coord1 = geocode_address(address1)
+    coord2 = geocode_address(address2)
+    print(f"coord1: {coord1}")
+    print(f"coord2: {coord2}")
 
-    client = openrouteservice.Client(key='5b3ce3597851110001cf6248aff4267605074765b7cdcaa38892b800') # Specify your personal API key
-    routes = client.directions(coords)
+    distance, duration = calculate_distance(coord1, coord2)
 
-    distance_meters = routes["routes"][0]["summary"]["distance"]
-    distance_kilometers = distance_meters / 1000
-    return str(distance_kilometers)
+    print(f"Distance: {distance / 1000:.2f} km")
+    print(f"Estimated Travel Time: {duration / 60:.2f} minutes")
+
+    return f"Distance: {distance / 1000:.2f} km\n" \
+        f"Estimated Travel Time: {duration / 60:.2f} minutes"
 
 if __name__ == '__main__':
     app.run(debug=True)
